@@ -1,0 +1,22 @@
+dist: trusty
+
+# This triggers builds to run on the new TravisCI infrastructure.
+# See: http://docs.travis-ci.com/user/workers/container-based-infrastructure/
+sudo: false
+
+## Cache composer
+cache:
+  bundler: true
+  directories:
+    - $HOME/docker
+
+#before_script:
+#  - composer self-update
+
+script:
+#- vendor/bin/phpcs --standard=psr2 src/ todo enable it later
+  - php56/build.sh
+
+
+#after_success:
+#- bash <(curl -s https://codecov.io/bash)

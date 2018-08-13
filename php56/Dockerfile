@@ -94,4 +94,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 RUN ln -s /usr/local/bin/php /usr/bin/php
 
+## todo add test
+
 WORKDIR /var/www

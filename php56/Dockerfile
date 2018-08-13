@@ -94,6 +94,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 RUN ln -s /usr/local/bin/php /usr/bin/php
 
+ADD ./config/extra-config.ini /usr/local/etc/php/conf.d/docker-php-ext-extra.ini
+ADD ./config/www.conf  /usr/local/etc/php-fpm.d/www.conf
+
 ## todo add test
 
 WORKDIR /var/www

@@ -25,6 +25,7 @@ cache:
 script:
   - php56/build.sh
   - php71/build.sh
+  - php72/build.sh
 
 
 #after_success:

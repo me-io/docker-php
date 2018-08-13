@@ -1,6 +1,6 @@
 <p align="center">
   <h3 align="center">Docker PHP Images</h3>
-  <p align="center">Production ready docker images for php 5.6, php 7.1 php 7.2 </p>
+  <p align="center">Production ready docker images for php 5.6, php 7.1, php 7.2 </p>
   <p align="center">
     <a href="https://travis-ci.org/me-io/docker-php">
       <img src="https://travis-ci.org/me-io/docker-php.svg?branch=master" alt="Build Status">

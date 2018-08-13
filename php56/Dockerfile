@@ -1,5 +1,6 @@
 # Dockerfile
-ARG PHP_VERSION=5.6.33
+ARG PHP_VERSION
+
 # http://php.net/downloads.php
 FROM php:${PHP_VERSION}-fpm
 MAINTAINER Mohamed Meabed <meabed@me.io>
@@ -67,7 +68,8 @@ RUN apt-get install -y \
     net-tools               \
     mysql-client            \
     inetutils-ping          \
-    psmisc
+    psmisc                  \
+    parallel
 
 
 ## EXTRA

@@ -2,7 +2,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
 REPO_NAME="meio/php"
-PHP_VERSION="5.6.33"
+PHP_VERSION="5.6.37"
 REDIS_VERSION="4.1.1"
 MONGO_VERSION="1.5.2"
 AMQP_VERSION="1.9.3"

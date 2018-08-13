@@ -23,8 +23,8 @@ cache:
 #  - composer self-update
 
 script:
-#- vendor/bin/phpcs --standard=psr2 src/ todo enable it later
   - php56/build.sh
+  - php71/build.sh
 
 
 #after_success:

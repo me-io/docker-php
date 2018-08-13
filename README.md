@@ -11,7 +11,7 @@
   </p>
 </p>
 
-## Maintained by: [the ME.IO Community](https://me.io/docker-hub/maintainer)
+## Maintained by: [the ME.IO Community](https://me.io/docker-hub/maintainers)
 
 This is the Git repo of the [ME.IO docker repos](https://me.io/docker-hub/repos) for [php](https://hub.docker.com/r/meio/php/) (not to be confused with any official php image provided by php upstream). See [the Docker Hub page](https://hub.docker.com/r/meio/php/) for the full readme on how to use this Docker image and for information regarding contributing and issues.
 

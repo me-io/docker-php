@@ -5,7 +5,7 @@ sudo: required
 language: ruby
 
 services:
-- docker
+  - docker
 
 before_install:
   - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -13,14 +13,13 @@ before_install:
   - sudo apt-get update
   - sudo apt-get -y install docker-ce
 
-## Cache composer
 cache:
   bundler: true
   directories:
     - $HOME/docker
 
 #before_script:
-#  - composer self-update
+#  - do something :)
 
 script:
   - php72/build.sh
@@ -29,4 +28,4 @@ script:
 
 
 #after_success:
-#- bash <(curl -s https://codecov.io/bash)
+#- update the readme and tags etc...

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
 REPO_NAME="meio/php"
 PHP_VERSION="5.6.33"
@@ -12,7 +13,7 @@ docker build --build-arg PHP_VERSION=${PHP_VERSION} \
              --build-arg REDIS_VERSION=${REDIS_VERSION} \
              --build-arg MONGO_VERSION=${MONGO_VERSION} \
              --build-arg AMQP_VERSION=${AMQP_VERSION} \
-             -t ${REPO_NAME}:${PHP_VERSION} .
+             -t ${REPO_NAME}:${PHP_VERSION} ${DIR}
 
 if [[ $? != 0 ]]; then
     echo "php ${PHP_VERSION} build failed"

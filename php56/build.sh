@@ -2,9 +2,13 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
 REPO_NAME="meio/php"
+# http://php.net/downloads.php
 PHP_VERSION="5.6.37"
+# https://pecl.php.net/package-changelog.php?package=redis
 REDIS_VERSION="4.1.1"
+# https://pecl.php.net/package-changelog.php?package=mongodb
 MONGO_VERSION="1.5.2"
+# https://pecl.php.net/package-changelog.php?package=amqp
 AMQP_VERSION="1.9.3"
 
 DOCKER_TAG=${PHP_VERSION}

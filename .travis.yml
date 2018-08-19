@@ -24,6 +24,7 @@ cache:
 script:
   - php72/build.sh
   - php71/build.sh
+  - php70/build.sh
   - php56/build.sh
 
 

@@ -7,14 +7,15 @@ ARG REDIS_VERSION
 ARG MONGO_VERSION
 # https://pecl.php.net/package-changelog.php?package=amqp
 ARG AMQP_VERSION
-# https://pecl.php.net/package-changelog.php?package=libsodium
-ENV VERSION_SODIUM 2.0.11
-# https://pecl.php.net/package-changelog.php?package=mcrypt
-ENV VERSION_MCRYPT 1.0.1
 
 # http://php.net/downloads.php
 FROM php:${PHP_VERSION}-fpm
 MAINTAINER Mohamed Meabed <meabed@me.io>
+
+# https://pecl.php.net/package-changelog.php?package=libsodium
+ENV VERSION_SODIUM 2.0.11
+# https://pecl.php.net/package-changelog.php?package=mcrypt
+ENV VERSION_MCRYPT 1.0.1
 
 #ENV PHP_VERSION $PHP_VERSION
 ENV DEBIAN_FRONTEND noninteractive

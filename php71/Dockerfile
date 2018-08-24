@@ -93,7 +93,12 @@ RUN pecl install libsodium-${VERSION_SODIUM}
 RUN  docker-php-ext-enable redis mongodb amqp sodium
 
 # Clean-up
+RUN apt-get clean -y ;\
+    apt-get autoclean -y ;\
+    apt-get autoremove --purge -y
+
 RUN rm -rf /var/lib/apt/* ; \
+    rm -rf /var/lib/dpkg/info/* ; \
     rm -rf /var/lib/cache/* ; \
     rm -rf /var/lib/log/* ; \
     rm -rf /var/tmp/* ; \

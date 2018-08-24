@@ -88,7 +88,12 @@ RUN pecl install amqp-${AMQP_VERSION}
 RUN  docker-php-ext-enable redis mongodb amqp
 
 # Clean-up
+RUN apt-get clean -y ;\
+    apt-get autoclean -y ;\
+    apt-get autoremove --purge -y
+
 RUN rm -rf /var/lib/apt/* ; \
+    rm -rf /var/lib/dpkg/info/* ; \
     rm -rf /var/lib/cache/* ; \
     rm -rf /var/lib/log/* ; \
     rm -rf /var/tmp/* ; \

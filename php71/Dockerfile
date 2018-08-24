@@ -92,8 +92,12 @@ RUN pecl install libsodium-${VERSION_SODIUM}
 
 RUN  docker-php-ext-enable redis mongodb amqp sodium
 
-# Clean up APT when done.
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+# Clean-up
+RUN rm -rf /var/lib/apt/* ; \
+    rm -rf /var/lib/cache/* ; \
+    rm -rf /var/lib/log/* ; \
+    rm -rf /var/tmp/* ; \
+    rm -rf /tmp/*
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 

@@ -51,11 +51,11 @@ ENV BUILD_PACKAGES \
     psmisc \
     parallel
 
-RUN apt-get update && \
-    apt-get -qq install -y ${BUILD_PACKAGES} && \
-    apt-get install -t stretch-backports -y \
+RUN apt-get update &&\
+    apt-get -qq install -y ${BUILD_PACKAGES} &&\
+    apt-get -qq install -t stretch-backports -y \
     libsodium18 \
-    libsodium-dev && \
+    libsodium-dev &&\
     docker-php-ext-install -j$(nproc) \
     iconv \
     curl \
@@ -71,27 +71,27 @@ RUN apt-get update && \
     mysqli \
     bcmath \
     xsl \
-    zip && \
-    docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
-    docker-php-ext-install -j$(nproc) gd && \
-    docker-php-ext-configure imap --with-imap-ssl --with-kerberos && \
-	docker-php-ext-install imap && \
-	pecl install redis-${REDIS_VERSION} && \
-    pecl install mongodb-${MONGO_VERSION} && \
-    pecl install amqp-${AMQP_VERSION} && \
-    pecl install libsodium-${VERSION_SODIUM} && \
-    pecl install mcrypt-${VERSION_MCRYPT} && \
-    docker-php-ext-enable redis mongodb amqp sodium mcrypt && \
+    zip &&\
+    docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ &&\
+    docker-php-ext-install -j$(nproc) gd &&\
+    docker-php-ext-configure imap --with-imap-ssl --with-kerberos &&\
+    docker-php-ext-install imap &&\
+    pecl install redis-${REDIS_VERSION} &&\
+    pecl install mongodb-${MONGO_VERSION} &&\
+    pecl install amqp-${AMQP_VERSION} &&\
+    pecl install libsodium-${VERSION_SODIUM} &&\
+    pecl install mcrypt-${VERSION_MCRYPT} &&\
+    docker-php-ext-enable redis mongodb amqp sodium mcrypt &&\
     apt-get purge --auto-remove -y ${BUILD_PACKAGES} ;\
     apt-get autoremove --purge -y ;\
     apt-get clean -y ;\
-    rm -rf /var/lib/apt/* ; \
-    rm -rf /var/lib/dpkg/info/* ; \
-    rm -rf /var/lib/cache/* ; \
-    rm -rf /var/lib/log/* ; \
-    rm -rf /var/tmp/* ; \
-    rm -rf /tmp/* ; \
-    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
+    rm -rf /var/lib/apt/* ;\
+    rm -rf /var/lib/dpkg/info/* ;\
+    rm -rf /var/lib/cache/* ;\
+    rm -rf /var/lib/log/* ;\
+    rm -rf /var/tmp/* ;\
+    rm -rf /tmp/* ;\
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer &&\
     ln -s /usr/local/bin/php /usr/bin/php
 
 ADD ./config/extra-config.ini /usr/local/etc/php/conf.d/docker-php-ext-extra.ini

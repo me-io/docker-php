@@ -23,7 +23,7 @@ RUN export LANG=C.UTF-8 && export LC_ALL=en_US.UTF-8
 
 RUN echo 'deb http://http.debian.net/debian stretch-backports main' > /etc/apt/sources.list.d/stretch-backports.list
 
-ENV BUILD_PACKAGES \
+ENV EXT_PACKAGES \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
     libmcrypt-dev \
@@ -35,7 +35,9 @@ ENV BUILD_PACKAGES \
     librabbitmq-dev \
     libxslt1-dev \
     libc-client2007e-dev \
-    libkrb5-dev \
+    libkrb5-dev
+
+ENV BUILD_PACKAGES \
     zip \
     unzip \
     vim \
@@ -53,6 +55,7 @@ ENV BUILD_PACKAGES \
     parallel
 
 RUN apt-get update &&\
+    apt-get -qq install -y ${EXT_PACKAGES} &&\
     apt-get -qq install -y ${BUILD_PACKAGES} &&\
     apt-get -qq install -t stretch-backports -y \
     libsodium18 \

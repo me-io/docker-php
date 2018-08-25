@@ -37,7 +37,7 @@ ENV EXT_PACKAGES \
     libc-client2007e-dev \
     libkrb5-dev
 
-ENV BUILD_PACKAGES \
+ENV APP_PACKAGES \
     zip \
     unzip \
     vim \
@@ -56,7 +56,7 @@ ENV BUILD_PACKAGES \
 
 RUN apt-get update &&\
     apt-get -qq install -y ${EXT_PACKAGES} &&\
-    apt-get -qq install -y ${BUILD_PACKAGES} &&\
+    apt-get -qq install -y ${APP_PACKAGES} &&\
     apt-get -qq install -t jessie-backports -y \
     libsodium18 \
     libsodium-dev &&\
@@ -86,7 +86,7 @@ RUN apt-get update &&\
     pecl install libsodium-${VERSION_SODIUM} &&\
     pecl install mcrypt-${VERSION_MCRYPT} &&\
     docker-php-ext-enable redis mongodb amqp sodium mcrypt &&\
-    apt-get purge --auto-remove -y ${BUILD_PACKAGES} ;\
+    apt-get purge --auto-remove -y ${APP_PACKAGES} ;\
     apt-get autoremove --purge -y ;\
     apt-get clean -y ;\
     rm -rf /var/lib/apt/* ;\

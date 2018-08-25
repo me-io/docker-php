@@ -18,7 +18,7 @@ RUN export LANG=C.UTF-8 && export LC_ALL=en_US.UTF-8
 
 RUN echo 'deb http://http.debian.net/debian jessie-backports main' > /etc/apt/sources.list.d/jessie-backports.list
 
-ENV BUILD_PACKAGES \
+ENV EXT_PACKAGES \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
     libmcrypt-dev \
@@ -30,7 +30,9 @@ ENV BUILD_PACKAGES \
     librabbitmq-dev \
     libxslt1-dev \
     libc-client2007e-dev \
-    libkrb5-dev \
+    libkrb5-dev
+
+ENV APP_PACKAGES \
     zip \
     unzip \
     vim \
@@ -48,7 +50,8 @@ ENV BUILD_PACKAGES \
     parallel
 
 RUN apt-get update &&\
-    apt-get -qq install -y ${BUILD_PACKAGES} &&\
+    apt-get -qq install -y ${EXT_PACKAGES} &&\
+    apt-get -qq install -y ${APP_PACKAGES} &&\
     apt-get -qq install -t jessie-backports -y \
     libsodium18 \
     libsodium-dev &&\
@@ -77,7 +80,7 @@ RUN apt-get update &&\
     pecl install mongodb-${MONGO_VERSION} &&\
     pecl install amqp-${AMQP_VERSION} &&\
     docker-php-ext-enable redis mongodb amqp &&\
-    apt-get purge --auto-remove -y ${BUILD_PACKAGES} ;\
+    apt-get purge --auto-remove -y ${APP_PACKAGES} ;\
     apt-get autoremove --purge -y ;\
     apt-get clean -y ;\
     rm -rf /var/lib/apt/* ;\

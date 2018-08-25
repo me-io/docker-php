@@ -1,5 +1,9 @@
 # Dockerfile
 ARG PHP_VERSION
+
+# http://php.net/downloads.php
+FROM php:${PHP_VERSION}-fpm
+MAINTAINER Mohamed Meabed <meabed@me.io>
 ## EXTRA
 # https://pecl.php.net/package-changelog.php?package=redis
 ARG REDIS_VERSION
@@ -7,10 +11,6 @@ ARG REDIS_VERSION
 ARG MONGO_VERSION
 # https://pecl.php.net/package-changelog.php?package=amqp
 ARG AMQP_VERSION
-
-# http://php.net/downloads.php
-FROM php:${PHP_VERSION}-fpm
-MAINTAINER Mohamed Meabed <meabed@me.io>
 
 # https://pecl.php.net/package-changelog.php?package=libsodium
 ENV VERSION_SODIUM 2.0.11

@@ -89,7 +89,6 @@ RUN apt-get update &&\
     apt-get purge --auto-remove -y ${APP_PACKAGES} ;\
     apt-get autoremove --purge -y ;\
     apt-get clean -y ;\
-    apt-get autoremove -y ${EXT_PACKAGES} ;\
     rm -rf /var/lib/apt/* ;\
     rm -rf /var/lib/dpkg/info/* ;\
     rm -rf /var/lib/cache/* ;\

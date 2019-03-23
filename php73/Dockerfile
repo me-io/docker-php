@@ -13,15 +13,15 @@ ARG MONGO_VERSION
 ARG AMQP_VERSION
 
 # https://pecl.php.net/package-changelog.php?package=libsodium
-ENV VERSION_SODIUM 2.0.11
+ENV VERSION_SODIUM 2.0.21
 # https://pecl.php.net/package-changelog.php?package=mcrypt
-ENV VERSION_MCRYPT 1.0.1
+ENV VERSION_MCRYPT 1.0.2
 
 #ENV PHP_VERSION $PHP_VERSION
 ENV DEBIAN_FRONTEND noninteractive
 RUN export LANG=C.UTF-8 && export LC_ALL=en_US.UTF-8
 
-RUN echo 'deb http://http.debian.net/debian jessie-backports main' > /etc/apt/sources.list.d/jessie-backports.list
+RUN echo 'deb http://http.debian.net/debian stretch-backports main' > /etc/apt/sources.list.d/stretch-backports.list
 
 ENV EXT_PACKAGES \
     libfreetype6-dev \
@@ -56,7 +56,7 @@ ENV APP_PACKAGES \
 RUN apt-get update &&\
     apt-get -qq install -y ${EXT_PACKAGES} &&\
     apt-get -qq install -y ${APP_PACKAGES} &&\
-    apt-get -qq install -t jessie-backports -y \
+    apt-get -qq install -t stretch-backports -y \
     libsodium18 \
     libsodium-dev &&\
     docker-php-ext-install -j$(nproc) \

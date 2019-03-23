@@ -1,6 +1,6 @@
 <p align="center">
   <h3 align="center">Docker PHP Images</h3>
-  <p align="center">Production ready docker images for php 5.6, php 7.0, php 7.1, php 7.2 </p>
+  <p align="center">Production ready docker images for php 7.2, php 7.3 </p>
   <p align="center">
     <a href="https://travis-ci.org/me-io/docker-php">
       <img src="https://travis-ci.org/me-io/docker-php.svg?branch=master" alt="Build Status">
@@ -28,18 +28,14 @@
 This is the Git repo of the [ME.IO docker repos](https://me.io/docker-hub/repos) for [php](https://hub.docker.com/r/meio/php/) (not to be confused with any official php image provided by php upstream). See [the Docker Hub page](https://hub.docker.com/r/meio/php/) for the full readme on how to use this Docker image and for information regarding contributing and issues.
 
 ## Features
-- ... 
-- ... 
-- ... 
+- @todo add 
 - CI - [Travis CI](https://travis-ci.org/)
-- ... 
-- ... 
 
 
 ## Getting Started
 
 ```bash
-docker run -it meio/php:7.2.8 /bin/bash
+docker run -it meio/php:7.3.3 /bin/bash
 ```
 
 

@@ -35,7 +35,9 @@ ENV EXT_PACKAGES \
     librabbitmq-dev \
     libxslt1-dev \
     libc-client2007e-dev \
-    libkrb5-dev
+    libkrb5-dev \
+    zlib1g-dev \
+    libicu-dev
 
 ENV APP_PACKAGES \
     zip \
@@ -79,6 +81,8 @@ RUN apt-get update &&\
     docker-php-ext-install -j$(nproc) gd &&\
     docker-php-ext-configure imap --with-imap-ssl --with-kerberos &&\
     docker-php-ext-install imap &&\
+    docker-php-ext-configure intl &&\
+    docker-php-ext-install intl &&\
     pecl install redis-${REDIS_VERSION} &&\
     pecl install mongodb-${MONGO_VERSION} &&\
     pecl install amqp-${AMQP_VERSION} &&\

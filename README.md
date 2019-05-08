@@ -6,6 +6,9 @@
       <img src="https://travis-ci.org/me-io/docker-php.svg?branch=master" alt="Build Status">
     </a>
     <a href="https://travis-ci.org/me-io/docker-php">
+      <img src="https://img.shields.io/badge/PHP-7.1-brightgreen.svg?longCache=true" alt="Build Status">
+    </a>
+    <a href="https://travis-ci.org/me-io/docker-php">
       <img src="https://img.shields.io/badge/PHP-7.2-brightgreen.svg?longCache=true" alt="Build Status">
     </a>
     <a href="https://travis-ci.org/me-io/docker-php">

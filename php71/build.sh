@@ -41,6 +41,8 @@ fi
 
 
 if [[ -z ${TAG_EXIST}  ]]; then
-    docker push ${REPO_NAME}:${PHP_VERSION}
-    echo "${REPO_NAME}/${DOCKER_TAG} pushed successfully"
+    if [[ "${FORCE}" != "f" ]]; then
+        docker push ${REPO_NAME}:${PHP_VERSION}
+        echo "${REPO_NAME}:${DOCKER_TAG} pushed successfully"
+    fi
 fi

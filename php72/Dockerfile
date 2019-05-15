@@ -21,7 +21,7 @@ ENV VERSION_MCRYPT 1.0.2
 ENV DEBIAN_FRONTEND noninteractive
 RUN export LANG=C.UTF-8 && export LC_ALL=en_US.UTF-8
 
-RUN echo 'deb http://http.debian.net/debian stretch-backports main' > /etc/apt/sources.list.d/stretch-backports.list
+# RUN echo 'deb http://http.debian.net/debian stretch-backports main' > /etc/apt/sources.list.d/stretch-backports.list
 
 ENV EXT_PACKAGES \
     libfreetype6-dev \
@@ -95,7 +95,7 @@ RUN apt-get update &&\
     apt-get clean -y ;\
     apt-get remove -y ${EXT_PACKAGES} ;\
     rm -rf /var/lib/apt/* ;\
-    rm -rf /var/lib/dpkg/info/* ;\
+#    rm -rf /var/lib/dpkg/info/* ;\
     rm -rf /var/lib/cache/* ;\
     rm -rf /var/lib/log/* ;\
     rm -rf /var/tmp/* ;\

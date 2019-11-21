@@ -13,9 +13,9 @@ ARG MONGO_VERSION
 ARG AMQP_VERSION
 
 # https://pecl.php.net/package-changelog.php?package=libsodium
-ENV VERSION_SODIUM 2.0.21
+ENV VERSION_SODIUM 2.0.22
 # https://pecl.php.net/package-changelog.php?package=mcrypt
-ENV VERSION_MCRYPT 1.0.2
+ENV VERSION_MCRYPT 1.0.3
 
 #ENV PHP_VERSION $PHP_VERSION
 ENV DEBIAN_FRONTEND noninteractive

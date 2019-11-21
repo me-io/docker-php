@@ -38,7 +38,7 @@ This is the Git repo of the [ME.IO docker repos](https://me.io/docker-hub/repos)
 ## Getting Started
 
 ```bash
-docker run -it meio/php:7.3.3 /bin/bash
+docker run -it meio/php:7.3.11 /bin/bash
 ```
 
 

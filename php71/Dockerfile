@@ -81,13 +81,13 @@ RUN apt-get update &&\
     docker-php-ext-install -j$(nproc) gd &&\
     docker-php-ext-configure imap --with-imap-ssl --with-kerberos &&\
     docker-php-ext-configure intl &&\
-    docker-php-ext-install imap intl bcmath &&\
+    docker-php-ext-install imap intl bcmath exif &&\
     pecl install redis-${REDIS_VERSION} &&\
     pecl install mongodb-${MONGO_VERSION} &&\
     pecl install amqp-${AMQP_VERSION} &&\
     pecl install libsodium-${VERSION_SODIUM} &&\
     pecl install mcrypt-${VERSION_MCRYPT} &&\
-    docker-php-ext-enable redis mongodb amqp sodium mcrypt &&\
+    docker-php-ext-enable redis mongodb amqp sodium mcrypt imap intl bcmath exif &&\
     apt-get purge --auto-remove -y ${APP_PACKAGES} ;\
     apt-get autoremove --purge -y ;\
     apt-get clean -y ;\

@@ -50,7 +50,6 @@ ENV APP_PACKAGES \
     multitail \
     zsh \
     net-tools \
-    mysql-client \
     inetutils-ping \
     psmisc \
     parallel

@@ -27,6 +27,8 @@ ENV EXT_PACKAGES \
     libjpeg62-turbo-dev \
     libmcrypt-dev \
     libpng-dev \
+    libwebp-dev \
+    libjpeg-dev \
     libssl-dev \
     libbz2-dev \
     libxml2-dev \

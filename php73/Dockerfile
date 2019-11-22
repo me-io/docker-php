@@ -27,6 +27,8 @@ ENV EXT_PACKAGES \
     libjpeg62-turbo-dev \
     libmcrypt-dev \
     libpng-dev \
+    libwebp-dev \
+    libjpeg-dev \
     libssl-dev \
     libbz2-dev \
     libxml2-dev \
@@ -83,7 +85,7 @@ RUN apt-get update &&\
     xmlwriter \
     zlib \
     zip &&\
-    docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include &&\
+    docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include --with-webp-dir=/usr/include &&\
     docker-php-ext-install -j$(nproc) gd &&\
     docker-php-ext-configure imap --with-imap-ssl --with-kerberos &&\
     docker-php-ext-install imap &&\

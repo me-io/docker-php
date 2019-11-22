@@ -60,7 +60,7 @@ ENV APP_PACKAGES \
 RUN apt-get update &&\
     apt-get -qq install -y ${EXT_PACKAGES} &&\
     apt-get -qq install -y ${APP_PACKAGES} &&\
-    CFLAGS="-I/usr/src/php" docker-php-ext-install -j$(nproc) \
+    CFLAGS="-I/usr/src/php" docker-php-ext-install \
     iconv \
     curl \
     gd \
@@ -69,13 +69,15 @@ RUN apt-get update &&\
     bz2 \
     mbstring \
     soap \
-    xml \
+    xml &&\
+    CFLAGS="-I/usr/src/php" docker-php-ext-install \
     pdo \
     pdo_mysql \
     mysqli \
     bcmath \
     exif \
-    xsl \
+    xsl &&\
+    CFLAGS="-I/usr/src/php" docker-php-ext-install \
     ctype \
     dom \
     fileinfo \

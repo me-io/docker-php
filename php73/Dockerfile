@@ -88,7 +88,8 @@ RUN apt-get update &&\
     yes '' | pecl install mcrypt-${VERSION_MCRYPT} &&\
     docker-php-ext-enable redis mongodb amqp sodium mcrypt
 
-RUN apt-get autoremove --purge -y ;\
+RUN apt-get purge --auto-remove -y ${APP_PACKAGES} ;\
+    apt-get autoremove --purge -y ;\
     apt-get clean -y ;\
     apt-get remove -y ${EXT_PACKAGES} ;\
     rm -rf /var/lib/apt/* ;\
@@ -98,7 +99,9 @@ RUN apt-get autoremove --purge -y ;\
     rm -rf /var/tmp/* ;\
     rm -rf /tmp/* ;\
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer &&\
-    ln -s /usr/local/bin/php /usr/bin/php
+    ln -s /usr/local/bin/php /usr/bin/php &&\
+    apt-get update &&\
+    apt-get -qq install -y git
 
 ADD ./config/extra-config.ini /usr/local/etc/php/conf.d/docker-php-ext-extra.ini
 ADD ./config/www.conf  /usr/local/etc/php-fpm.d/www.conf

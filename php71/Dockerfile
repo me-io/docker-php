@@ -21,7 +21,6 @@ ENV VERSION_MCRYPT 1.0.3
 ENV DEBIAN_FRONTEND noninteractive
 RUN export LANG=C.UTF-8 && export LC_ALL=en_US.UTF-8
 
-RUN echo 'deb http://http.debian.net/debian stretch-backports main' > /etc/apt/sources.list.d/stretch-backports.list
 
 ENV EXT_PACKAGES \
     libfreetype6-dev \
@@ -37,7 +36,8 @@ ENV EXT_PACKAGES \
     libc-client2007e-dev \
     libkrb5-dev \
     zlib1g-dev \
-    libicu-dev
+    libicu-dev \
+    libsodium-dev
 
 ENV APP_PACKAGES \
     zip \
@@ -57,9 +57,6 @@ ENV APP_PACKAGES \
 RUN apt-get update &&\
     apt-get -qq install -y ${EXT_PACKAGES} &&\
     apt-get -qq install -y ${APP_PACKAGES} &&\
-    apt-get -qq install -t stretch-backports -y \
-    libsodium23 \
-    libsodium-dev &&\
     docker-php-ext-install -j$(nproc) \
     iconv \
     curl \

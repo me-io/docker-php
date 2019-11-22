@@ -37,7 +37,8 @@ ENV EXT_PACKAGES \
     libkrb5-dev \
     zlib1g-dev \
     libicu-dev \
-    libsodium-dev
+    libsodium-dev \
+    libzip-dev
 
 ENV APP_PACKAGES \
     zip \

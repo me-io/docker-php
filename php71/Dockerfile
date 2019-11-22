@@ -94,7 +94,7 @@ RUN apt-get update &&\
     yes '' | pecl install amqp-${AMQP_VERSION} &&\
     yes '' | pecl install libsodium-${VERSION_SODIUM} &&\
     yes '' | pecl install mcrypt-${VERSION_MCRYPT} &&\
-    docker-php-ext-enable redis mongodb amqp sodium mcrypt gd
+    docker-php-ext-enable redis mongodb amqp sodium mcrypt
 
 RUN apt-get purge --auto-remove -y ${APP_PACKAGES} ;\
     apt-get autoremove --purge -y ;\

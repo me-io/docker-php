@@ -79,7 +79,6 @@ RUN apt-get update &&\
     ctype \
     dom \
     fileinfo \
-    libxml \
     simplexml \
     xmlreader \
     xmlwriter \

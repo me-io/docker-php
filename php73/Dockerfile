@@ -74,8 +74,16 @@ RUN apt-get update &&\
     bcmath \
     exif \
     xsl \
+    ctype \
+    dom \
+    fileinfo \
+    libxml \
+    simplexml \
+    xmlreader \
+    xmlwriter \
+    zlib \
     zip &&\
-    docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ &&\
+    docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include &&\
     docker-php-ext-install -j$(nproc) gd &&\
     docker-php-ext-configure imap --with-imap-ssl --with-kerberos &&\
     docker-php-ext-install imap &&\
@@ -86,7 +94,7 @@ RUN apt-get update &&\
     yes '' | pecl install amqp-${AMQP_VERSION} &&\
     yes '' | pecl install libsodium-${VERSION_SODIUM} &&\
     yes '' | pecl install mcrypt-${VERSION_MCRYPT} &&\
-    docker-php-ext-enable redis mongodb amqp sodium mcrypt
+    docker-php-ext-enable redis mongodb amqp sodium mcrypt gd
 
 RUN apt-get purge --auto-remove -y ${APP_PACKAGES} ;\
     apt-get autoremove --purge -y ;\

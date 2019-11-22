@@ -83,7 +83,6 @@ RUN apt-get update &&\
     simplexml \
     xmlreader \
     xmlwriter \
-    zlib \
     zip &&\
     docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include --with-webp-dir=/usr/include &&\
     docker-php-ext-install -j$(nproc) gd &&\

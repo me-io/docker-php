@@ -40,6 +40,7 @@ ENV EXT_PACKAGES \
     zlib1g-dev \
     libicu-dev \
     libsodium-dev \
+    libmagickwand-dev \
     libzip-dev
 
 ENV APP_PACKAGES \

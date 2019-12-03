@@ -23,6 +23,7 @@ cache:
 
 script:
   - php73/build.sh f
+  - php74/build.sh f
   - php72/build.sh f
   - php71/build.sh f
 

@@ -21,12 +21,12 @@ cache:
 #before_script:
 #  - do something :)
 
-script:
-  - bash php74/build.sh f
-  - bash php73/build.sh f
-  - bash php72/build.sh f
-  - bash php71/build.sh f
-
+env:
+  - BUILD_CMD="php74/build.sh f"
+  - BUILD_CMD="php73/build.sh f"
+  - BUILD_CMD="php72/build.sh f"
+  - BUILD_CMD="php71/build.sh f"
+script: ./${BUILD_CMD}
 
 #after_success:
 #- update the readme and tags etc...

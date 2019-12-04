@@ -89,7 +89,7 @@ RUN apt-get update &&\
     zip &&\
     docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include --with-webp-dir=/usr/include &&\
     docker-php-ext-install -j$(nproc) gd &&\
-    docker-php-ext-configure imap --with-imap-ssl --with-kerberos &&\
+    PHP_OPENSSL=yes docker-php-ext-configure imap --with-imap-ssl --with-kerberos &&\
     docker-php-ext-install imap &&\
     docker-php-ext-configure intl &&\
     docker-php-ext-install intl &&\

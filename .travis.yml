@@ -25,7 +25,6 @@ env:
   - BUILD_CMD="php74/build.sh"
   - BUILD_CMD="php73/build.sh"
   - BUILD_CMD="php72/build.sh"
-  - BUILD_CMD="php71/build.sh"
 script: ./${BUILD_CMD}
 
 #after_success:

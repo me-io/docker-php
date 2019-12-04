@@ -41,7 +41,8 @@ ENV EXT_PACKAGES \
     libicu-dev \
     libsodium-dev \
     libmagickwand-dev \
-    libzip-dev
+    libzip-dev \
+    libonig-dev
 
 ENV APP_PACKAGES \
     zip \

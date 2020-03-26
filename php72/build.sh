@@ -3,11 +3,11 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
 REPO_NAME="meio/php"
 # http://php.net/downloads.php
-PHP_VERSION="7.2.25"
+PHP_VERSION="7.2.29"
 # https://pecl.php.net/package-changelog.php?package=redis
-REDIS_VERSION="5.1.1"
+REDIS_VERSION="5.2.1"
 # https://pecl.php.net/package-changelog.php?package=mongodb
-MONGO_VERSION="1.6.0"
+MONGO_VERSION="1.7.4"
 # https://pecl.php.net/package-changelog.php?package=amqp
 AMQP_VERSION="1.9.4"
 

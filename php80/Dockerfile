@@ -15,7 +15,7 @@ ARG AMQP_VERSION
 # https://pecl.php.net/package-changelog.php?package=libsodium
 ENV VERSION_SODIUM 2.0.22
 # https://pecl.php.net/package-changelog.php?package=mcrypt
-ENV VERSION_MCRYPT 1.0.3
+ENV VERSION_MCRYPT 1.0.4
 
 #ENV PHP_VERSION $PHP_VERSION
 ENV DEBIAN_FRONTEND noninteractive
@@ -41,7 +41,8 @@ ENV EXT_PACKAGES \
     libicu-dev \
     libsodium-dev \
     libmagickwand-dev \
-    libzip-dev
+    libzip-dev \
+    libonig-dev
 
 ENV APP_PACKAGES \
     zip \
@@ -86,9 +87,9 @@ RUN apt-get update &&\
     xmlreader \
     xmlwriter \
     zip &&\
-    docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include --with-webp-dir=/usr/include &&\
+    docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg --with-webp &&\
     docker-php-ext-install -j$(nproc) gd &&\
-    docker-php-ext-configure imap --with-imap-ssl --with-kerberos &&\
+    PHP_OPENSSL=yes docker-php-ext-configure imap --with-imap-ssl --with-kerberos &&\
     docker-php-ext-install imap &&\
     docker-php-ext-configure intl &&\
     docker-php-ext-install intl &&\

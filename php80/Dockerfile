@@ -97,8 +97,8 @@ RUN apt-get update &&\
 #    yes '' | pecl install amqp-${AMQP_VERSION} &&\
     yes '' | pecl install libsodium-${VERSION_SODIUM} &&\
     yes '' | pecl install mcrypt-${VERSION_MCRYPT} &&\
-    yes '' | pecl install imagick-3.4.4 &&\
-    docker-php-ext-enable redis mongodb sodium mcrypt imagick
+#    yes '' | pecl install imagick-3.4.4 &&\
+    docker-php-ext-enable redis mongodb sodium mcrypt
 
 RUN apt-get purge --auto-remove -y ${APP_PACKAGES} ;\
     apt-get autoremove --purge -y ;\

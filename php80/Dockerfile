@@ -89,8 +89,6 @@ RUN apt-get update &&\
     zip &&\
     docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg --with-webp &&\
     docker-php-ext-install -j$(nproc) gd &&\
-    PHP_OPENSSL=yes docker-php-ext-configure imap --with-imap-ssl --with-kerberos &&\
-    docker-php-ext-install imap &&\
     docker-php-ext-configure intl &&\
     docker-php-ext-install intl &&\
     yes '' | pecl install redis-${REDIS_VERSION} &&\

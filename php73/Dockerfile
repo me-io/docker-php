@@ -13,7 +13,7 @@ ARG MONGO_VERSION
 ARG AMQP_VERSION
 
 # https://pecl.php.net/package-changelog.php?package=libsodium
-ENV VERSION_SODIUM 2.0.22
+ENV VERSION_SODIUM 2.0.23
 # https://pecl.php.net/package-changelog.php?package=mcrypt
 ENV VERSION_MCRYPT 1.0.4
 

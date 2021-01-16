@@ -13,7 +13,7 @@ ARG MONGO_VERSION
 ARG AMQP_VERSION
 
 # https://pecl.php.net/package-changelog.php?package=libsodium
-ENV VERSION_SODIUM 2.0.22
+ENV VERSION_SODIUM 2.0.23
 # https://pecl.php.net/package-changelog.php?package=mcrypt
 ENV VERSION_MCRYPT 1.0.4
 
@@ -87,13 +87,18 @@ RUN apt-get update &&\
     xmlreader \
     xmlwriter \
     zip &&\
+    docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg --with-webp &&\
+    docker-php-ext-install -j$(nproc) gd &&\
+    PHP_OPENSSL=yes docker-php-ext-configure imap --with-imap-ssl --with-kerberos &&\
+    docker-php-ext-install imap &&\
+    docker-php-ext-configure intl &&\
+    docker-php-ext-install intl &&\
     yes '' | pecl install redis-${REDIS_VERSION} &&\
     yes '' | pecl install mongodb-${MONGO_VERSION} &&\
-    yes '' | pecl install amqp-${AMQP_VERSION} &&\
     yes '' | pecl install libsodium-${VERSION_SODIUM} &&\
     yes '' | pecl install mcrypt-${VERSION_MCRYPT} &&\
     yes '' | pecl install imagick-3.4.4 &&\
-    docker-php-ext-enable redis mongodb amqp sodium mcrypt imagick
+    docker-php-ext-enable redis mongodb sodium mcrypt imagick
 
 RUN apt-get purge --auto-remove -y ${APP_PACKAGES} ;\
     apt-get autoremove --purge -y ;\

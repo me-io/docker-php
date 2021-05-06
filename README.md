@@ -14,21 +14,13 @@
     <a href="https://travis-ci.org/me-io/docker-php">
       <img src="https://img.shields.io/badge/PHP-8.0-brightgreen.svg?longCache=true" alt="Build Status">
     </a>
-    <a href="https://twitter.com/meabed">
-      <img src="https://img.shields.io/badge/twitter-@meabed-179BD7.svg?style=flat-squares" alt="twitter @meabed">
-    </a>
-    <a href="https://meabed.com">
-      <img src="https://img.shields.io/badge/Author-blog-green.svg?style=flat-square" alt="Auther blog meabed.com">
-    </a>
     <a href="LICENSE.md">
       <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License">
     </a>
   </p>
 </p>
 
-## Maintained by: [the ME.IO Community](https://me.io/docker-hub/maintainers)
-
-This is the Git repo of the [ME.IO docker repos](https://me.io/docker-hub/repos) for [php](https://hub.docker.com/r/meio/php/) (not to be confused with any official php image provided by php upstream). See [the Docker Hub page](https://hub.docker.com/r/meio/php/) for the full readme on how to use this Docker image and for information regarding contributing and issues.
+This is the Git repo for [php docker repos](https://hub.docker.com/r/meio/php/) (not to be confused with any official php image provided by php upstream). See [the Docker Hub page](https://hub.docker.com/r/meio/php/) for the full readme on how to use this Docker image and for information regarding contributing and issues.
 
 ## Features
 - @todo add

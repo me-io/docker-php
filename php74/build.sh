@@ -3,7 +3,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
 REPO_NAME="meio/php"
 # http://php.net/downloads.php
-PHP_VERSION="7.4.16"
+PHP_VERSION="7.4.19"
 # https://pecl.php.net/package-changelog.php?package=redis
 REDIS_VERSION="5.3.4"
 # https://pecl.php.net/package-changelog.php?package=mongodb
@@ -11,9 +11,9 @@ MONGO_VERSION="1.9.0"
 # https://pecl.php.net/package-changelog.php?package=amqp
 AMQP_VERSION="1.10.2"
 # https://pecl.php.net/package-changelog.php?package=libsodium
-SODIUM_VERSION="1.10.2"
+SODIUM_VERSION="2.0.23"
 # https://pecl.php.net/package-changelog.php?package=mcrypt
-MCRYPT_VERSION="1.10.2"
+MCRYPT_VERSION="1.0.4"
 
 DOCKER_TAG=${PHP_VERSION}
 

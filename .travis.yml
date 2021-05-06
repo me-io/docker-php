@@ -16,9 +16,9 @@ cache:
 #  - do something :)
 
 env:
-  - BUILD_CMD="php80/build.sh"
-  - BUILD_CMD="php74/build.sh"
-  - BUILD_CMD="php73/build.sh"
+  - BUILD_CMD="php80/build.sh f"
+  - BUILD_CMD="php74/build.sh f"
+  - BUILD_CMD="php73/build.sh f"
 script: ./${BUILD_CMD}
 
 #after_success:

@@ -10,6 +10,10 @@ REDIS_VERSION="5.3.4"
 MONGO_VERSION="1.9.0"
 # https://pecl.php.net/package-changelog.php?package=amqp
 AMQP_VERSION="1.10.2"
+# https://pecl.php.net/package-changelog.php?package=libsodium
+SODIUM_VERSION="1.10.2"
+# https://pecl.php.net/package-changelog.php?package=mcrypt
+MCRYPT_VERSION="1.10.2"
 
 DOCKER_TAG=${PHP_VERSION}
 

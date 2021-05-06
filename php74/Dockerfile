@@ -11,11 +11,10 @@ ARG REDIS_VERSION
 ARG MONGO_VERSION
 # https://pecl.php.net/package-changelog.php?package=amqp
 ARG AMQP_VERSION
-
 # https://pecl.php.net/package-changelog.php?package=libsodium
-ENV VERSION_SODIUM 2.0.23
+ARG SODIUM_VERSION
 # https://pecl.php.net/package-changelog.php?package=mcrypt
-ENV VERSION_MCRYPT 1.0.4
+ARG MCRYPT_VERSION
 
 #ENV PHP_VERSION $PHP_VERSION
 ENV DEBIAN_FRONTEND noninteractive
@@ -96,8 +95,8 @@ RUN apt-get update &&\
     yes '' | pecl install redis-${REDIS_VERSION} &&\
     yes '' | pecl install mongodb-${MONGO_VERSION} &&\
     yes '' | pecl install amqp-${AMQP_VERSION} &&\
-    yes '' | pecl install libsodium-${VERSION_SODIUM} &&\
-    yes '' | pecl install mcrypt-${VERSION_MCRYPT} &&\
+    yes '' | pecl install libsodium-${SODIUM_VERSION} &&\
+    yes '' | pecl install mcrypt-${MCRYPT_VERSION} &&\
     yes '' | pecl install imagick-3.4.4 &&\
     docker-php-ext-enable redis mongodb amqp sodium mcrypt imagick
 

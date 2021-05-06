@@ -22,10 +22,6 @@
 
 This is the Git repo for [php docker repos](https://hub.docker.com/r/meio/php/) (not to be confused with any official php image provided by php upstream). See [the Docker Hub page](https://hub.docker.com/r/meio/php/) for the full readme on how to use this Docker image and for information regarding contributing and issues.
 
-## Features
-- @todo add
-- CI - [Travis CI](https://travis-ci.org/)
-
 
 ## Getting Started
 

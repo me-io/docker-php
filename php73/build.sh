@@ -36,7 +36,7 @@ docker build --build-arg PHP_VERSION=${PHP_VERSION} \
              --build-arg REDIS_VERSION=${REDIS_VERSION} \
              --build-arg MONGO_VERSION=${MONGO_VERSION} \
              --build-arg AMQP_VERSION=${AMQP_VERSION} \
-              --build-arg SODIUM_VERSION=${SODIUM_VERSION} \
+             --build-arg SODIUM_VERSION=${SODIUM_VERSION} \
              --build-arg MCRYPT_VERSION=${MCRYPT_VERSION} \
              -t ${REPO_NAME}:${PHP_VERSION} ${DIR}
 

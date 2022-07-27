@@ -97,7 +97,8 @@ RUN apt-get update &&\
 #    yes '' | pecl install libsodium-${SODIUM_VERSION} &&\
     yes '' | pecl install mcrypt-${MCRYPT_VERSION} &&\
 #    yes '' | pecl install imagick-3.4.4 &&\
-    docker-php-ext-enable redis mongodb sodium mcrypt
+#    docker-php-ext-enable sodium &&\ # disabled for compatability
+    docker-php-ext-enable redis mongodb mcrypt
 
 RUN apt-get purge --auto-remove -y ${APP_PACKAGES} ;\
     apt-get autoremove --purge -y ;\

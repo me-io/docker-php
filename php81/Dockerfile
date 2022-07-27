@@ -94,7 +94,7 @@ RUN apt-get update &&\
     yes '' | pecl install redis-${REDIS_VERSION} &&\
     yes '' | pecl install mongodb-${MONGO_VERSION} &&\
 #    yes '' | pecl install amqp-${AMQP_VERSION} &&\
-    yes '' | pecl install libsodium-${SODIUM_VERSION} &&\
+#    yes '' | pecl install libsodium-${SODIUM_VERSION} &&\
     yes '' | pecl install mcrypt-${MCRYPT_VERSION} &&\
 #    yes '' | pecl install imagick-3.4.4 &&\
     docker-php-ext-enable redis mongodb sodium mcrypt

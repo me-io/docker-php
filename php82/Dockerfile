@@ -95,10 +95,11 @@ RUN apt-get update &&\
     yes '' | pecl install mongodb-${MONGO_VERSION} &&\
 #    yes '' | pecl install amqp-${AMQP_VERSION} &&\
 #    yes '' | pecl install libsodium-${SODIUM_VERSION} &&\
-    yes '' | pecl install mcrypt-${MCRYPT_VERSION} &&\
-#    yes '' | pecl install imagick-3.4.4 &&\
+#    yes '' | pecl install mcrypt-${MCRYPT_VERSION} &&\ # https://github.com/php/pecl-encryption-mcrypt/issues/12
+    yes '' | pecl install imagick-3.7.0 &&\
 #    docker-php-ext-enable sodium &&\ # disabled for compatability
-    docker-php-ext-enable redis mongodb mcrypt
+#    docker-php-ext-enable mcrypt
+    docker-php-ext-enable redis mongodb
 
 RUN apt-get purge --auto-remove -y ${APP_PACKAGES} ;\
     apt-get autoremove --purge -y ;\

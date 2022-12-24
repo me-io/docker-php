@@ -5,14 +5,20 @@
     <a href="https://travis-ci.org/me-io/docker-php">
       <img src="https://travis-ci.org/me-io/docker-php.svg?branch=master" alt="Build Status">
     </a>
-    <a href="https://travis-ci.org/me-io/docker-php">
+    <a href="https://github.com/me-io/docker-php/actions/workflows/build-php73.yaml">
       <img src="https://img.shields.io/badge/PHP-7.3-brightgreen.svg?longCache=true" alt="Build Status">
     </a>
-    <a href="https://travis-ci.org/me-io/docker-php">
+    <a href="https://github.com/me-io/docker-php/actions/workflows/build-php74.yaml">
       <img src="https://img.shields.io/badge/PHP-7.4-brightgreen.svg?longCache=true" alt="Build Status">
     </a>
-    <a href="https://travis-ci.org/me-io/docker-php">
+    <a href="https://github.com/me-io/docker-php/actions/workflows/build-php80.yaml">
       <img src="https://img.shields.io/badge/PHP-8.0-brightgreen.svg?longCache=true" alt="Build Status">
+    </a>
+    <a href="https://github.com/me-io/docker-php/actions/workflows/build-php81.yaml">
+      <img src="https://img.shields.io/badge/PHP-8.1-brightgreen.svg?longCache=true" alt="Build Status">
+    </a>
+    <a href="https://github.com/me-io/docker-php/actions/workflows/build-php82.yaml">
+      <img src="https://img.shields.io/badge/PHP-8.2-brightgreen.svg?longCache=true" alt="Build Status">
     </a>
     <a href="LICENSE.md">
       <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License">

@@ -5,15 +5,15 @@ REPO_NAME="meio/php"
 # http://php.net/downloads.php
 PHP_VERSION="7.3.33"
 # https://pecl.php.net/package-changelog.php?package=redis
-REDIS_VERSION="5.3.6"
+REDIS_VERSION="5.3.7"
 # https://pecl.php.net/package-changelog.php?package=mongodb
-MONGO_VERSION="1.12.0"
+MONGO_VERSION="1.15.0"
 # https://pecl.php.net/package-changelog.php?package=amqp
 AMQP_VERSION="1.11.0"
 # https://pecl.php.net/package-changelog.php?package=libsodium
 SODIUM_VERSION="2.0.23"
 # https://pecl.php.net/package-changelog.php?package=mcrypt
-MCRYPT_VERSION="1.0.4"
+MCRYPT_VERSION="1.0.5"
 
 DOCKER_TAG=${PHP_VERSION}
 

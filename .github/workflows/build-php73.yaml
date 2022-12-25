@@ -11,6 +11,8 @@ on:
 
 env:
   DOCKER_PAT: ${{ secrets.DOCKER_PAT }}
+  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
   CI: true
 
 jobs:

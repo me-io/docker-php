@@ -2,9 +2,6 @@
   <h3 align="center">Docker PHP Images</h3>
   <p align="center">Production ready docker images for php 7.3, php 7.4, php 8.0, php 8.1, php 8.2</p>
   <p align="center">
-    <a href="https://travis-ci.org/me-io/docker-php">
-      <img src="https://travis-ci.org/me-io/docker-php.svg?branch=master" alt="Build Status">
-    </a>
     <a href="https://github.com/me-io/docker-php/actions/workflows/build-php73.yaml">
       <img src="https://img.shields.io/badge/PHP-7.3-brightgreen.svg?longCache=true" alt="Build Status">
     </a>

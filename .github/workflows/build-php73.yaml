@@ -1,5 +1,7 @@
 name: build-php73
 on:
+  workflow_dispatch:
+  workflow_call:
   push:
     paths:
       - 'php73/**'
